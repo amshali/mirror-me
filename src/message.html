@@ -1,0 +1,62 @@
+<div class="modal fade" id="error-message-dialog" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-bg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title" id="error-message-title">Error:</h5>
+      </div>
+      <div class="modal-body">
+        <div id="error-message" class="alert alert-danger">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="file-modified-message-dialog" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-bg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title">Warning:</h5>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-warning">
+          File has been modified on the server. What would you like to do?
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-warning btn-ok">Reload</a>
+        <a class="btn btn-danger btn-ok">Overwrite</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="unsaved-message-dialog" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-bg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title">Warning:</h5>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-warning">
+          You have unsaved changes. What would you like to do?
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-warning btn-ok">Discard</a>
+        <a class="btn btn-success btn-ok">Save</a>
+      </div>
+    </div>
+  </div>
+</div>

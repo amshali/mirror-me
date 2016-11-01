@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mirror Me</title>
+  <link href="/lib/codemirror/lib/codemirror.min.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/3024-day.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/3024-night.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/abcdef.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/ambiance.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/base16-dark.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/bespin.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/base16-light.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/blackboard.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/cobalt.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/colorforth.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/dracula.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/eclipse.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/elegant.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/erlang-dark.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/hopscotch.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/icecoder.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/isotope.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/lesser-dark.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/liquibyte.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/material.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/mbo.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/mdn-like.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/midnight.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/monokai.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/neat.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/neo.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/night.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/panda-syntax.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/paraiso-dark.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/paraiso-light.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/pastel-on-dark.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/railscasts.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/rubyblue.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/seti.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/solarized.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/the-matrix.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/tomorrow-night-bright.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/tomorrow-night-eighties.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/ttcn.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/twilight.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/vibrant-ink.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/xq-dark.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/xq-light.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/yeti.css" rel="stylesheet">
+  <link href="/lib/codemirror/theme/zenburn.css" rel="stylesheet">
+  <link href="/lib/codemirror/addon/hint/show-hint.min.css" rel="stylesheet">
+  <link href="/lib/codemirror/addon/lint/lint.min.css" rel="stylesheet">
+  <link href="/lib/codemirror/addon/fold/foldgutter.min.css" rel="stylesheet">
+  <link href="/lib/codemirror/addon/dialog/dialog.min.css" rel="stylesheet">
+  <link href="/lib/codemirror/addon/search/matchesonscrollbar.min.css" rel="stylesheet">
+  <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/src/editor.css" rel="stylesheet">
+
+  <script src="/lib/jquery-3.1.0.min.js"></script>
+  <script src="/lib/codemirror/lib/codemirror.min.js"></script>
+  <script src="/lib/jshint.min.js"></script>
+  <script src="/lib/jsonlint.js"></script>
+  <script src="/lib/csslint.min.js"></script>
+  <script src="/lib/codemirror/addon/selection/active-line.min.js"></script>
+  <script src="/lib/codemirror/addon/edit/closebrackets.min.js"></script>
+  <script src="/lib/codemirror/addon/edit/matchbrackets.min.js"></script>
+  <script src="/lib/codemirror/addon/edit/closetag.min.js"></script>
+  <script src="/lib/codemirror/addon/edit/trailingspace.min.js"></script>
+  <script src="/lib/codemirror/addon/hint/show-hint.min.js"></script>
+  <script src="/lib/codemirror/addon/hint/anyword-hint.min.js"></script>
+  <script src="/lib/codemirror/addon/lint/lint.min.js"></script>
+  <script src="/lib/codemirror/addon/lint/json-lint.min.js"></script>
+  <script src="/lib/codemirror/addon/lint/javascript-lint.min.js"></script>
+  <script src="/lib/codemirror/addon/lint/css-lint.min.js"></script>
+  <script src="/lib/codemirror/addon/fold/foldcode.min.js"></script>
+  <script src="/lib/codemirror/addon/fold/foldgutter.min.js"></script>
+  <script src="/lib/codemirror/addon/fold/brace-fold.min.js"></script>
+  <script src="/lib/codemirror/addon/fold/xml-fold.min.js"></script>
+  <script src="/lib/codemirror/addon/fold/markdown-fold.min.js"></script>
+  <script src="/lib/codemirror/addon/fold/comment-fold.min.js"></script>
+  <script src="/lib/codemirror/addon/display/autorefresh.min.js"></script>
+  <script src="/lib/codemirror/addon/display/rulers.min.js"></script>
+  <script src="/lib/codemirror/addon/display/panel.min.js"></script>
+  <script src="/lib/codemirror/addon/comment/comment.min.js"></script>
+  <script src="/lib/codemirror/addon/dialog/dialog.min.js"></script>
+  <script src="/lib/codemirror/addon/search/jump-to-line.min.js"></script>
+  <script src="/lib/codemirror/addon/search/searchcursor.min.js"></script>
+  <script src="/lib/codemirror/addon/search/search.min.js"></script>
+  <script src="/lib/codemirror/addon/search/match-highlighter.min.js"></script>
+  <script src="/lib/codemirror/addon/search/matchesonscrollbar.min.js"></script>
+  <script src="/lib/codemirror/addon/scroll/annotatescrollbar.min.js"></script>
+  <script src="/lib/codemirror/addon/mode/loadmode.min.js"></script>
+  <script src="/lib/codemirror/addon/mode/simple.min.js"></script>
+  <script src="/lib/codemirror/addon/mode/overlay.min.js"></script>
+  <script src="/lib/codemirror/addon/mode/multiplex.min.js"></script>
+  <script src="/lib/codemirror/mode/meta.min.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/src/common.js"></script>
+  <script src="/src/editor-lib.js"></script>
+</head>
+<body>
+  <div class="_table" id="main">
+    <div class="_table_row">
+      <div class="status-div">
+        <div id="cursor-position"></div>
+        <div class="file-browser">
+          <input id="file-path" class="form-control input-sm" placeholder="Ctrl + ."/>
+          <div class="list-group" id="files-list"></div>
+        </div>
+      </div>
+    </div>
+    <div class="_table_row editor-row">
+      <div class="_table_cell display-100p" id="editor-cell">
+        <div class="editor-area">
+          <textarea id="code" name="code"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="_table" style="padding: 1em">
+    <label for="buffer-path">Buffers:</label>
+    <input id="buffer-path" class="form-control input-sm" readonly/>
+    <div class="list-group" id="buffers-list"></div>
+  </div>
+  <script>
+    $('body').append($('<div id="message-div"></div>'));
+    $(function(){
+      $("div#message-div").load("/src/message.html");
+    });
+  </script>
+  <script src="/src/editor.js"></script>
+</body>
+</html>

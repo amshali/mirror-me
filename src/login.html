@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mirror Me</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/lib/jquery-3.1.0.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container" style="width: 30%">
+      <div class="row">
+        <div class="span12">
+          <form class="form-horizontal" action='/login' method="POST">
+            <fieldset>
+              <div id="legend">
+                <legend class="">Mirror Me Login</legend>
+              </div>
+              <div class="control-group">
+                <!-- Username -->
+                <label class="control-label"  for="username">Username</label>
+                <div class="controls">
+                  <input type="text" id="username" name="user" placeholder="" class="form-control input-sm" autofocus>
+                </div>
+              </div>
+              <div class="control-group">
+                <!-- Password-->
+                <label class="control-label" for="password">Password</label>
+                <div class="controls">
+                  <input type="password" id="password" name="pass" placeholder="" class="form-control input-sm">
+                </div>
+              </div>
+              <div class="control-group">
+                <!-- Button -->
+                <div class="controls">
+                  <button class="form-control btn btn-success">Login</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

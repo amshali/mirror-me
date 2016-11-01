@@ -1,0 +1,45 @@
+{
+  "CodeMirror":{
+    "theme": "abcdef",
+    "tabSize": 2,
+    "styleActiveLine":true,
+    "lineNumbers":true,
+    "extraKeys":{
+      "Ctrl-Space":"autocomplete",
+      "Ctrl-/":"toggleComment",
+      "Ctrl-F":"findPersistent",
+      "Tab": "handleTab"
+    },
+    "showTrailingSpace":true,
+    "lineWrapping":true,
+    "autoCloseBrackets":true,
+    "autoCloseTags":true,
+    "indentWithTabs":false,
+    "matchBrackets":true,
+    "foldGutter":true,
+    "smartIndent":true,
+    "gutters":[
+      "CodeMirror-linenumbers",
+      "CodeMirror-lint-markers"
+    ],
+    "lint":{
+      "lintOnChange":false
+    },
+    "insertSoftTab":true,
+    "rulers":[
+      {
+        "column":80,
+        "lineStyle":"dashed"
+      },
+      {
+        "column":100,
+        "lineStyle":"dashed"
+      }
+    ],
+    "cursorScrollMargin":50,
+    "autoRefresh":{
+      "delay":300
+    },
+    "showHintOnInput":true
+  }
+}
