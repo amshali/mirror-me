@@ -148,6 +148,10 @@
         }
       });
       ls('', '', _this.showFilesDirs.bind(_this));
+      toastr.options.closeButton = true;
+      toastr.options.timeOut = 30000;
+      toastr.info('Press "Ctrl + ." to access the file browser.');
+      toastr.info('Press "Ctrl + ," to access open buffers.');
     }, // init
 
     saveFile: function() {
@@ -190,7 +194,11 @@
           } else {
             _this.editorLib.trySave(currentDoc);
           }
+        } else {
+          toastr.error(data.Message, 'Error');
         }
+      }).fail(function() {
+        toastr.error('Request failed.', 'Error');
       });
     },
     enterAction: function(item) {

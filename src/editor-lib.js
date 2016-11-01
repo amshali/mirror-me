@@ -46,6 +46,7 @@
           }, 100);
         }
       }).fail(function() {
+        toastr.error('An error occured while trying to save the file.', 'Error');
         console.log('An error occured while trying to save the file.');
       });
     },
