@@ -19,8 +19,10 @@
       CodeMirror.commands.autocomplete = _this.editorLib.autoComplete.bind(_this.editorLib);
       CodeMirror.commands.handleTab = _this.editorLib.handleTab.bind(_this.editorLib);
       _this.codemirror = CodeMirror.fromTextArea(document.getElementById("code"));
-      $.get('/settings').then(function(data) {
+      $.get('/settings').done(function(data) {
         _this.editorLib.applySettings(_this.codemirror, data.Settings.CodeMirror);
+      }).fail(function() {
+        toastr.error('Error occured while loading the settings.');
       });
 
       $(window).resize(function() {
@@ -160,7 +162,7 @@
       if (currentDoc.isClean(currentDoc.ChangeNumber) || currentDoc.Scratch) {
         return;
       }
-      $.get('/fstat?path=' + currentDoc.Path).then(function(data) {
+      $.get('/fstat?path=' + currentDoc.Path).done(function(data) {
         if (data.Status === 'OK') {
           if (data.MTime !== currentDoc.MTime) {
             setTimeout(function() {

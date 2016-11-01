@@ -213,7 +213,7 @@
           $('#main').show();
           _this.openFile(buffers, cm, fileData);
         } else {
-          $.get('/cat?path=' + fileData.Path).then(function(data) {
+          $.get('/cat?path=' + fileData.Path).done(function(data) {
             if (data.Status == 'OK') {
               $('#main').show();
               _this.openFile(buffers, cm, data);
@@ -222,6 +222,8 @@
                 showError('Error opening file:', data.Message);
               }, 100);
             }
+          }).fail(function() {
+            toastr.error('Failed to open the file.');
           });
         }
       }
