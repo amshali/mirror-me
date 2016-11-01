@@ -9,4 +9,4 @@ npm install
 node src/mirror-me.js --username=user --password=12345 --secret='a secret code'
 ```
 
-Navigate to http://localhost:3348. Enjoy!
+Navigate to [localhost:3348](http://localhost:3348). Enjoy!
