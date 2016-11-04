@@ -163,7 +163,7 @@
         return;
       }
       $.get('/fstat?path=' + currentDoc.Path).done(function(data) {
-        if (data.Status === 'OK') {
+        if (data.Status === 'OK' && data.IsRegularFile) {
           if (data.MTime !== currentDoc.MTime) {
             setTimeout(function() {
               var dialog = $('#file-modified-message-dialog');
@@ -197,6 +197,7 @@
             _this.editorLib.trySave(currentDoc);
           }
         } else {
+          // TODO(amshali): generate appropriate message:
           toastr.error(data.Message, 'Error');
         }
       }).fail(function() {
@@ -205,14 +206,19 @@
     },
     enterAction: function(item) {
       var _this = this;
-      if (!item.data('file')) {
-        return;
-      }
-      if (item.data('file').IsDirectory) {
-        ls(item.data('file').Path, '', _this.showFilesDirs.bind(_this));
-      } else {
-        _this.editorLib.openEditor(_this.buffers, _this.codemirror, item.data('file'));
-      }
+      $.get('/fstat?path=' + $('#file-path').val()).done(function(data) {
+        if (data.Status === 'OK') {
+          if (data.IsDirectory) {
+            ls(data.Path, '', _this.showFilesDirs.bind(_this));
+          } else {
+            _this.editorLib.openEditor(_this.buffers, _this.codemirror, data);
+          }
+        } else {
+          toastr.error(data.Message, 'Error');
+        }
+      }).fail(function() {
+        toastr.error('Request failed.', 'Error');
+      });
     },
     showFilesDirs: function(data, pattern) {
       var _this = this;

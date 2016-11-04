@@ -150,24 +150,13 @@ app.get('/fstat', auth, function(req, res) {
   }
   try {
     var fileStat = fs.statSync(filePath);
-    if (!fileStat.isFile()) {
-      res.json({
-        Status: 'ERROR',
-        Message: 'Not a regular file: ' + filePath
-      });
-      return;
-    }
-    if (isBinaryFile.sync(filePath)) {
-      res.json({
-        Status: 'ERROR',
-        Message: filePath + ', seems to be a binary file. We cannot edit!'
-      });
-      return;
-    }
     res.json({
       Status: 'OK',
       Path: filePath,
       MTime: fileStat.mtime.getTime(),
+      IsDirectory: fileStat.isDirectory(),
+      IsRegularFile: fileStat.isFile(),
+      IsBinaryFile: isBinaryFile.sync(filePath),
     });
     return;
   } catch(e) {
