@@ -2,6 +2,10 @@
 
 A simple backend and frontend for using CodeMirror.
 
+![Editor](/images/screenshot-editor.png)
+![Buffers](/images/screenshot-buffers.png)
+
+
 ## Usage
 
 ```sh
