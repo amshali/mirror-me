@@ -14,7 +14,7 @@
 
     init: function() {
       var _this = this;
-      CodeMirror.modeURL = "/lib/codemirror/mode/%N/%N.js";
+      CodeMirror.modeURL = "/codemirror/mode/%N/%N.js";
       CodeMirror.commands.save = _this.saveFile.bind(_this);
       CodeMirror.commands.autocomplete = _this.editorLib.autoComplete.bind(_this.editorLib);
       CodeMirror.commands.handleTab = _this.editorLib.handleTab.bind(_this.editorLib);

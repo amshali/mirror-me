@@ -33,6 +33,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 
 app.use('/lib', express.static(__dirname + '/../lib'));
+app.use('/codemirror', express.static(__dirname + '/../node_modules/codemirror-minified'));
 app.use('/src', express.static(__dirname));
 
 // Authentication and Authorization Middleware
