@@ -74,6 +74,7 @@ try {
   fs.mkdirSync(configDir);
 }
 var favConfigPath = path.join(configDir, 'fav-dirs');
+fs.closeSync(fs.openSync(favConfigPath, 'a'));
 var settingsConfigPath = path.join(configDir, 'settings.json');
 // Read settings
 try {
